@@ -1,5 +1,11 @@
 <?php 
+$genres= array();
+$genres[0]= "Abstract";
+$genres[1]= "Baroque";
+$genres[2]= "Gothic";
+$genres[3]= "Renaissance";
 
+$subjects= array(0=>"Animals", 1=>"Landscape", 2=>"People");
 
 ?>
 <!DOCTYPE html>
