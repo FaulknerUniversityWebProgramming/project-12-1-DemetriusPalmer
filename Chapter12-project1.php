@@ -1,4 +1,5 @@
 <?php 
+include 'header.inc.php';
 $genres= array();
 $genres[0]= "Abstract";
 $genres[1]= "Baroque";
@@ -7,6 +8,15 @@ $genres[3]= "Renaissance";
 
 $subjects= array(0=>"Animals", 1=>"Landscape", 2=>"People");
 
+function output($display= array()){
+	{
+		$i=0;
+		while($i <$display.length){
+		echo "<option>".$display[$i]. "</option> <br>";
+		}
+	}
+	
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,10 +29,10 @@ $subjects= array(0=>"Animals", 1=>"Landscape", 2=>"People");
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<?php include 'header.inc.php'; ?>
+<?php  ?>
     
 <main>
-<form class="form"  id="mainForm" method="Post" action="art-process.php">
+<form class="form"  id="mainForm" action="art-process.php" method="Post">
    <fieldset class="form__panel">
       <legend class="form__heading">Edit Art Work Details</legend>
         <p class="form__row">
@@ -37,7 +47,7 @@ $subjects= array(0=>"Animals", 1=>"Landscape", 2=>"People");
            <label>Genre</label><br/>
            <select name="genre" class="form__input form__select">
               <option>Choose genre</option> 
-              
+              <?php echo output(genres); ?>
            </select>
        </p>
        <p class="form__row"> 
