@@ -1,5 +1,4 @@
 <?php 
-include 'header.inc.php';
 $genres= array();
 $genres[0]= "Abstract";
 $genres[1]= "Baroque";
@@ -8,11 +7,12 @@ $genres[3]= "Renaissance";
 
 $subjects= array(0=>"Animals", 1=>"Landscape", 2=>"People");
 
-function output($display= array()){
+function display1($display){
 	{
 		$i=0;
-		while($i <$display.length){
+		while($i < count($display)){
 		echo "<option>".$display[$i]. "</option> <br>";
+		$i++;
 		}
 	}
 	
@@ -29,7 +29,7 @@ function output($display= array()){
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<?php  ?>
+<?php include 'header.inc.php'; ?>
     
 <main>
 <form class="form"  id="mainForm" action="art-process.php" method="Post">
@@ -47,14 +47,14 @@ function output($display= array()){
            <label>Genre</label><br/>
            <select name="genre" class="form__input form__select">
               <option>Choose genre</option> 
-              <?php echo output(genres); ?>
+              <?php display1($genres); ?>
            </select>
        </p>
        <p class="form__row"> 
            <label>Subject</label><br/>
            <select name="subject" class="form__input form__select">
               <option>Choose subject</option> 
-              
+              <?php display1($subjects);?>
            </select>
        </p>
        <p class="form__row">	
